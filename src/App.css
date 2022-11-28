@@ -11,8 +11,9 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 1900px;
   height: 125px;
+  margin: auto;
+
 }
 
 .Logo{
@@ -54,6 +55,9 @@ header{
 
 .join{
   height: 600px;
+  opacity: 0;
+  transform: translateY(-150%);
+  animation: ani 1s forwards;
 }
 .join h1,h2,h3{
   color:white;
@@ -77,8 +81,6 @@ header{
   font-size: 20px;
   line-height: 2em;
 }
-
-
 
 .join a{
   display: -ms-flexbox;
@@ -238,3 +240,76 @@ header{
   margin-right:5px;
 }
 /*----------------------*/
+
+/*---------Register/Login-----------*/
+.Form{
+  background: #191919;
+  display: table;
+  width: 686px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  border-radius: 40px;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-150%);
+  animation: ani 1s forwards;
+
+
+}
+@keyframes ani {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+  0% {transform: translateY(120%);}
+  100% {transform: translateY(0);}
+}
+.InputForm{
+  text-align: center;
+  align-items: center;
+}
+
+.InputForm input{
+  width: 587px;
+  height: 55px;
+  background: #373737;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.Form button{
+  background: #796d53;
+  color: white;
+  width: 278px;
+  height: 55px;
+  border-style: none;
+  border-color: #796d53;
+  border-radius: 20px;
+  font-size: 32px;
+  font-family: sans-serif;
+  transition: 0.3s;
+}
+
+.Form button:hover{
+  cursor: pointer;
+  border-radius: 25px;
+  background: #918464;
+}
+
+.RegLog{
+  color:white;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.log{
+  color: #545454;
+}
+
+.log a{
+  text-decoration: none;
+  color: #918464;
+}
+/*---------------------------------*/

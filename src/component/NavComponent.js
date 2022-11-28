@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import logo from '../img/logo.png';
-
+import {NavLink} from "react-router-dom";
 export default class NavComponent extends Component{
     render() {
         return (
@@ -10,16 +10,11 @@ export default class NavComponent extends Component{
                     GrandGym
                 </div>
                 <ul className="NavBar">
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <li><a href="#">Home</a></li>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <li><a href="#">Services</a></li>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <li><a href="#">About us</a></li>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <li><a href="#">Contact</a></li>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <li><a href="#">Login</a></li>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/">Services</NavLink></li>
+                    <li><NavLink to="/">About us</NavLink></li>
+                    <li><NavLink to="/">Contact</NavLink></li>
+                    <li><NavLink to="/Register">Register</NavLink></li>
                 </ul>
             </header>
         );

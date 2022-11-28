@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {NavLink} from "react-router-dom";
 
 export default class JoinComponent extends Component{
     render() {
@@ -7,8 +8,7 @@ export default class JoinComponent extends Component{
                 <h2>Качественные и современные тренажёры</h2>
                 <h1>В нашем фитнес-центре</h1>
                 <h3>Присоединяйся к нашему клубу</h3>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a href="#">Присоедениться</a>
+                <NavLink to="/Register">Присоедениться</NavLink>
             </div>
         );
     }
