@@ -6,20 +6,28 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "async_hooks": "^1.0.0",
     "axios": "^1.2.0",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "connect-pg-simple": "^8.0.0",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "express-validator": "^6.14.2",
     "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
     "jsx": "^0.9.89",
+    "net": "^1.0.2",
     "next": "^13.0.5",
     "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "path": "^0.12.7",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
     "pg-promise": "^10.15.4",
@@ -28,14 +36,16 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "sequelize": "^6.25.8",
+    "stream": "^0.0.2",
     "validator": "^13.7.0",
     "web-vitals": "^2.1.4",
-    "webpack": "^5.75.0"
+    "webpack": "^5.75.0",
+    "zlib": "^1.0.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "dev": "nodemon index.js"
   },
@@ -56,5 +66,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "body-parser": "^1.20.1",
+    "buffer": "^6.0.3",
+    "content-disposition": "^0.5.4",
+    "crypto-browserify": "^3.12.0",
+    "destroy": "^1.2.0",
+    "etag": "^1.8.1",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.0"
+  },
+
+  "browser":  { "fs": false, "path": false, "os": false, "net": false, "tls": false }
 }
