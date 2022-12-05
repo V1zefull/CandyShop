@@ -30,8 +30,11 @@ header{
 
 .NavBar{
   margin: 0;
+  display: flex;
   padding: 4px;
+  align-items: center;
 }
+
 .NavBar li{
   display: inline-block;
   margin: 0 20px 0 0;
@@ -48,6 +51,10 @@ header{
 
 .NavBar li a:hover{
   color: #c7b299;
+}
+
+.nav-img{
+  width: 70%;
 }
 /*-----------------------*/
 
@@ -179,11 +186,11 @@ header{
   transition: 0.3s;
 }
 
-.PostDate:hover{
+.Post:hover > .PostDate{
   color: white;
 }
 
-.Post:hover{
+.Post:hover > p{
   color: #c7b299;
 }
 
@@ -313,3 +320,202 @@ header{
   color: #918464;
 }
 /*---------------------------------*/
+
+/*--------Client/Admin page--------*/
+
+.Client-card{
+  width: 1177px;
+  height: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 40px 40px 0 0;
+  background-color: #191919;
+  transform: translateY(-150%);
+  animation: ani 1s forwards;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(120%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.Base-info{
+  display: flex;
+  width: 1050px;
+  height: 190px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 30px;
+}
+
+.info{
+  margin-left: 70px;
+  text-align: left;
+  line-height: 15px;
+}
+
+.info p{
+  color: white;
+  font-family: sans-serif;
+}
+
+.Name{
+  font-size: 40px;
+}
+
+.Role{
+  font-size: 34px;
+}
+
+/*---------------------------------*/
+
+/*-------Services--------*/
+
+.services{
+  width: 1177px;
+  height: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 40px 40px 0 0;
+  background-color: #191919;
+  transform: translateY(-150%);
+  animation: ani 1s forwards;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(120%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.serv-container{
+  width: 950px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.serv-container h1{
+  font-size: 40px;
+  font-family: sans-serif;
+  color: white;
+  padding-top: 40px;
+}
+
+.serv-container-in p{
+  font-family: sans-serif;
+  font-size: 30px;
+  color: white;
+  text-align: left;
+  line-height: 0.5;
+}
+
+.serv-in{
+  display: flex;
+  justify-content: space-around;
+}
+
+.standard{
+  width: 290px;
+  height: 130px;
+  border-radius: 20px;
+  background-color: #c7b299;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.standard:hover{
+  border-radius: 30px;
+}
+
+
+.standard p{
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.silver{
+  width: 290px;
+  height: 130px;
+  border-radius: 20px;
+  background-color: #bcbcbc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.silver:hover{
+  border-radius: 30px;
+}
+
+.silver p{
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.gold{
+  width: 290px;
+  height: 130px;
+  border-radius: 20px;
+  background-color: #cfc35a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.gold:hover{
+  border-radius: 30px;
+}
+
+.gold p{
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
+}
+
+/*-----------------------*/
+
+/*--------Inventory---------*/
+
+.inv-div{
+  width: 300px;
+  height: 300px;
+  background-color: #c6b198;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.inv-div:hover{
+  border-radius: 40px;
+}
+
+.inv-div img{
+  width: 300px;
+  height: 300px;
+}
+
+/*--------------------------*/

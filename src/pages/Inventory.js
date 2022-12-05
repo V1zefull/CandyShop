@@ -1,13 +1,13 @@
 import React from 'react';
 import NavComponent from "../component/NavComponent";
 import FooterComponent from "../component/FooterComponent";
-import LoginComponent from "../component/LoginComponent";
+import InventoryComponent from "../component/InventoryComponent";
 
-export default function Login() {
+export default function Inventory() {
     return (
         <div className="App">
             <NavComponent/>
-            <LoginComponent/>
+            <InventoryComponent/>
             <FooterComponent/>
         </div>
     );

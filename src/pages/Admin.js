@@ -1,13 +1,13 @@
 import React from 'react';
 import NavComponent from "../component/NavComponent";
 import FooterComponent from "../component/FooterComponent";
-import LoginComponent from "../component/LoginComponent";
+import ClientComponent from "../component/ClientComponent";
 
-export default function Login() {
+export default function Admin() {
     return (
         <div className="App">
             <NavComponent/>
-            <LoginComponent/>
+            <ClientComponent/>
             <FooterComponent/>
         </div>
     );

@@ -58,7 +58,7 @@ export default class NavComponent extends Component{
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/anchor-has-content */}
                         <li><a href="">Support</a></li>
                     </ul>
-                    <p>Designed by <span>ThemeFire</span><span1> </span1>on <span>Envato Market</span></p>
+                    <p>Designed by <span>Diam nonummy</span> on <span>etiam processus</span></p>
                 </div>
             </div>
         );
