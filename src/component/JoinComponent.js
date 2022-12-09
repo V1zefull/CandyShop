@@ -8,7 +8,7 @@ export default class JoinComponent extends Component{
                 <h2>Качественные и современные тренажёры</h2>
                 <h1>В нашем фитнес-центре</h1>
                 <h3>Присоединяйся к нашему клубу</h3>
-                <NavLink to="/Register">Присоедениться</NavLink>
+                <NavLink to="/registration">Присоедениться</NavLink>
             </div>
         );
     }

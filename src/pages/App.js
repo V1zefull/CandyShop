@@ -35,7 +35,6 @@ export default function App() {
             {isAdmin &&
                 <Routes>
                     <Route path="/admin" element={<Admin/>}/>
-
                 </Routes>
             }
 

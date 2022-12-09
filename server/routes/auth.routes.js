@@ -6,6 +6,7 @@ import config from "config";
 import jwt from "jsonwebtoken";
 import {where} from "sequelize";
 import authMiddleware from '../middleware/auth.middleware.js'
+
 const router = new Router()
 
 
@@ -21,13 +22,13 @@ router.post('/registration',
         if (!errors.isEmpty()) {
             return res.status(400).json({message: "Uncorrected request", errors})
         }
-        const {email, password} = req.body
+        const {email, password, name, surname} = req.body
         const candidate = await User.findOne({where:{email: email}})
         if(candidate){
             return res.status(400).json({message:`User with email ${email} already exist`})
         }
         const hashPassword = await bcrypt.hash(password, 7)
-        const user = new User({email, password: hashPassword})
+        const user = new User({email, password: hashPassword, name, surname})
         await user.save()
         return res.json({message: "User was created"})
     }catch (e){
@@ -48,12 +49,16 @@ router.post('/login',
             if (!isPassValid){
                 return res.status(400).json({message:"Invalid password"})
             }
-            const token = jwt.sign({id:user.id}, config.get("secretKey"),{expiresIn: "1h"})
+            const token = jwt.sign({id:user.id, role:user.role}, config.get("secretKey"),{expiresIn: "1h"})
+
             return res.json({
                 token,
                 user:{
                     id: user.id,
-                    email: user.email
+                    email: user.email,
+                    name: user.name,
+                    surname: user.surname,
+                    role: user.role,
                 }
             })
         }catch (e){
@@ -65,16 +70,16 @@ router.post('/login',
 router.get('/auth', authMiddleware,
     async (req,res)=>{
         try {
-            const user = await User.findOne({_id: req.user.id})
-            const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "1h"})
+            const user = await User.findOne({where:{id: req.user.id}})
+            const token = jwt.sign({id: user.id, role:user.role}, config.get("secretKey"), {expiresIn: "1h"})
             return res.json({
                 token,
                 user: {
                     id: user.id,
                     email: user.email,
-                    diskSpace: user.diskSpace,
-                    usedSpace: user.usedSpace,
-                    avatar: user.avatar
+                    name: user.name,
+                    surname: user.surname,
+                    role:user.role
                 }
             })
         }catch (e){
@@ -82,4 +87,5 @@ router.get('/auth', authMiddleware,
             res.send({message:"Server error"})
         }
     })
+
 export default router
