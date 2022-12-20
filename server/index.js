@@ -5,6 +5,7 @@ import sequelize from './sequelize.js'
 import router from './routes/index.js'
 import corsMiddleware from './middleware/cors.middleware.js'
 import cors from 'cors'
+import fileUpload from 'express-fileupload'
 import ErrorHandlerMiddleware from './middleware/ErrorHandlerMiddleware.js'
 const PORT = process.env.PORT || 5000
 
@@ -15,6 +16,7 @@ const app = express()
 app.use(corsMiddleware)
 app.use(cors())
 app.use(express.json())
+app.use(fileUpload({}))
 app.use('/api', router)
 
 //обработчик ошибок

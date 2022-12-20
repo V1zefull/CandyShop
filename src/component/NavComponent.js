@@ -14,13 +14,13 @@ const NavComponent = () =>{
                     GrandGym
                 </div>
                 <ul className="NavBar">
-                    {!isAdmin && !isAuth && <li><NavLink to="/">Home</NavLink></li>}
-                    {!isAdmin && isAuth && <li><NavLink to="/services">Services</NavLink></li>}
-                    {isAdmin && <li><NavLink to="/inventory">Inventory</NavLink></li>}
-                    {!isAdmin && <li><NavLink to="/">About us</NavLink></li>}
-                    {!isAdmin && <li><NavLink to="/">Contact</NavLink></li>}
-                    {!isAuth && <li><NavLink to="/registration">Register</NavLink></li>}
-                    {isAuth && <li> <NavLink to="/" onClick={()=> dispatch(logout())}>Logout</NavLink> </li>}
+                    {!isAdmin && !isAuth && <li><NavLink to="/">Главная страница</NavLink></li>}
+                    {isAuth && <li><NavLink to="/services">Услуги</NavLink></li>}
+                    <li><NavLink to="/inventory">Наше оборудование</NavLink></li>
+                    {!isAdmin && <li><NavLink to="/">О нас</NavLink></li>}
+                    {!isAdmin && <li><NavLink to="/">Контакты</NavLink></li>}
+                    {!isAuth && <li><NavLink to="/registration">Регистрация</NavLink></li>}
+                    {isAuth && <li> <NavLink to="/" onClick={()=> dispatch(logout())}>Выйти</NavLink> </li>}
                     {!isAdmin && isAuth && <NavLink to ="/client" ><img className="nav-img" src={require('../img/Profile.png') } alt=""/></NavLink>}
                     {isAdmin && isAuth && <NavLink to ="/admin" ><img className="nav-img" src={require('../img/Profile.png') } alt=""/></NavLink>}
                 </ul>

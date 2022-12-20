@@ -74,20 +74,20 @@ header{
 .join h1{
   font-family: "Raleway-ExtraBold", sans-serif;
   font-size: 52px;
-  line-height: 0.7em;
+  line-height: 1.5em;
 }
 
 .join h2{
   font-family: "Raleway-ExtraBold", sans-serif;
   font-size: 36px;
   margin-top: 248px;
-  line-height: 0.4em;
+  line-height: 0.2em;
 }
 
 .join h3{
   font-family: "Raleway-ExtraBold", sans-serif;
   font-size: 20px;
-  line-height: 2em;
+  line-height: 0.5em;
 }
 
 .join a{
@@ -102,9 +102,11 @@ header{
   font-size: 14px;
   text-transform: uppercase;
   transition: 0.3s;
+  line-height: 5em;
 }
 
 .join a:hover{
+  color: white;
   background: #7d6e61;
   border-radius: 20px;
 }
@@ -253,8 +255,7 @@ header{
 .Form{
   background: #191919;
   display: table;
-  width: 686px;
-  height: 550px;
+  width: 630px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 25px;
@@ -272,7 +273,7 @@ header{
 }
 
 .InputForm input{
-  width: 587px;
+  width: 500px;
   height: 50px;
   background: #373737;
   border: none;
@@ -284,11 +285,11 @@ header{
 .Form button{
   background: #796d53;
   color: white;
-  width: 278px;
   height: 55px;
   border-style: none;
   border-color: #796d53;
   border-radius: 20px;
+  margin-bottom: 30px;
   font-size: 32px;
   font-family: sans-serif;
   transition: 0.3s;
@@ -303,6 +304,7 @@ header{
 .RegLog{
   color:white;
   font-size: 40px;
+  margin-top: 15px;
   font-family: sans-serif;
 }
 
@@ -350,12 +352,14 @@ header{
   margin-right: auto;
   margin-left: auto;
   padding-top: 30px;
+
 }
 
 .info{
+  margin-top: 30px;
   margin-left: 70px;
   text-align: left;
-  line-height: 15px;
+  line-height: 35px;
 }
 
 .info p{
@@ -369,6 +373,27 @@ header{
 
 .Role{
   font-size: 34px;
+}
+
+.serviceList{
+  color:white;
+  font-size: 28px;
+  width: 900px;
+  margin: auto;
+}
+
+.serviceListHead{
+  font-size: 34px;
+}
+
+.serviceListBody{
+  display: list-item;
+  text-align: left;
+}
+
+.serviceListBody::marker{
+  color: white;
+  font-size: 1.2em;
 }
 
 /*---------------------------------*/
@@ -423,68 +448,28 @@ header{
 }
 
 .serv-in{
+  margin-top: 50px;
   display: flex;
   justify-content: space-around;
 }
 
-.standard{
+.servicesType{
   width: 290px;
   height: 130px;
   border-radius: 20px;
-  background-color: #c7b299;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
-}
-.standard:hover{
-  border-radius: 30px;
-}
-
-
-.standard p{
-  font-size: 20px;
-  color: white;
-  font-family: sans-serif;
-}
-
-.silver{
-  width: 290px;
-  height: 130px;
-  border-radius: 20px;
-  background-color: #bcbcbc;
+  background-color: #c6b198;
+  margin-left: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s;
 }
 
-.silver:hover{
+.servicesType:hover{
   border-radius: 30px;
 }
 
-.silver p{
-  font-size: 20px;
-  color: white;
-  font-family: sans-serif;
-}
-
-.gold{
-  width: 290px;
-  height: 130px;
-  border-radius: 20px;
-  background-color: #cfc35a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
-}
-
-.gold:hover{
-  border-radius: 30px;
-}
-
-.gold p{
+.servicesType p{
   font-size: 20px;
   color: white;
   font-family: sans-serif;
@@ -514,3 +499,129 @@ header{
 }
 
 /*--------------------------*/
+
+/*-------TrainerType-------*/
+
+.Trainer{
+  width:800px;
+  height: 800px;
+  background-color: #191919;
+  border-radius: 40px 40px 0 0;
+  margin: auto;
+  transform: translateY(-150%);
+  animation: ani 1s forwards;
+  color:white;
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(120%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.Trainer-Container{
+  margin: auto;
+  width: 600px;
+  padding-top: 15px;
+}
+
+.TrainerIMG{
+  width: 300px;
+  height: 300px;
+  background-color: #c6b198;
+  margin: auto;
+  border-radius: 20px;
+
+}
+
+.TrainerIMG img{
+  width: 300px;
+  height: 300px;
+}
+
+.TrainerIndividual{
+  display: flex;
+}
+
+.TrainerIndividualOne p, a{
+  text-align: left;
+  text-decoration: none;
+}
+
+.TrainerIndividual p, a{
+  margin-right: 25px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.TrainerIndividual a:hover{
+  color: #c6b198;
+}
+
+.Add:hover{
+  color:#c6b198;
+}
+
+/*-------------------------*/
+
+/*--------Service---------*/
+
+.Service{
+  width: 1100px;
+  height: 600px;
+  background-color: #191919;
+  border-radius: 40px 40px 0 0;
+  margin: auto;
+  transform: translateY(-150%);
+  animation: ani 1s forwards;
+  color:white;
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(120%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.Service-container{
+  width: 900px;
+  padding-top: 15px;
+  margin: auto;
+}
+
+.ServiceCardInfo p{
+  text-align: left;
+}
+
+.ServiceInfo{
+  text-align: left;
+}
+.ServiceIndividual{
+  display: flex;
+  justify-content: center;
+
+}
+/*------------------------*/

@@ -11,12 +11,12 @@ const Login = (() => {
 
     return (
         <div className="Form">
-            <p className="RegLog">Login</p>
+            <p className="RegLog">Вход</p>
             <form className="InputForm">
-                <Input value={email} setValue={setEmail} type="text" placeholder=" Email"/>
-                <Input value={password} setValue={setPassword} type="password" placeholder=" Password"/>
+                <Input value={email} setValue={setEmail} type="text" placeholder=" Введите почту"/>
+                <Input value={password} setValue={setPassword} type="password" placeholder=" Введите пароль"/>
             </form>
-            <NavLink to='/'><button type="submit" onClick={() => dispatch(login(email, password))}>Login</button></NavLink>
+            <NavLink to='/'><button type="submit" onClick={() => dispatch(login(email, password))}>Войти</button></NavLink>
         </div>
     );
 })

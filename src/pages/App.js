@@ -9,6 +9,10 @@ import Client from "./Client";
 import Admin from "./Admin";
 import Services from "./Services"
 import Inventory from "./Inventory";
+import TrainerType from "./Trainer"
+import TrainerOne from "./TrainerOne"
+import ServiceOne from "./ServiceOne";
+import ServiceType from "./ServiceType"
 
 export default function App() {
     const isAuth = useSelector(state => state.user.isAuth)
@@ -25,6 +29,11 @@ export default function App() {
                 <Route path="/client" element={<Client/>}/>
                 <Route path="/services" element={<Services/>}/>
                 <Route path="/inventory" element={<Inventory/>}/>
+                <Route path="/serviceCard" element={<ServiceOne/>}/>
+                <Route path="/ServiceType/:id" element={<ServiceType/>}/>
+                <Route path="/ServiceOne/:id" element={<ServiceOne/>}/>
+                <Route path="/TrainerType/:id" element={<TrainerType/>}/>
+                <Route path="/TrainerOne/:id" element={<TrainerOne/>}/>
             </Routes>
             {!isAuth &&
                 <Routes>
@@ -35,6 +44,7 @@ export default function App() {
             {isAdmin &&
                 <Routes>
                     <Route path="/admin" element={<Admin/>}/>
+
                 </Routes>
             }
 

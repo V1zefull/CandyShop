@@ -1,37 +1,44 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import {Context} from "../index";
+import {ServiceTypeGetAll} from "../http/userAPI";
+import ServiceTypeBar from "./ServiceTypeBar";
+import Button from "react-bootstrap/Button";
+import {useSelector} from "react-redux";
+import CreateTrainertype from "./modals/CreateTrainertype";
+import CreateServiceType from "./modals/CreateServiceType";
 
 const ServicesComponent = () => {
+    const {service} = useContext(Context)
+    const [ServiceType, SetServiceType] = useState({})
+    const [serviceVisible,setServiceVisible] = useState(false)
+    const isAdmin = useSelector(state => state.user.isAdmin)
+    useEffect(()=>{
+        ServiceTypeGetAll().then(data => {
+            service.setServiceType(data)
+            console.log(data)
+        })
+    }, [])
     return (
         <div className="services">
             <div className="serv-container">
                 <h1>Услуги</h1>
                 <div className="serv-container-in">
-                    <p>Абонименты:</p>
                     <div className="serv-in">
-                        <div className='standard'><p>Стандарт</p></div>
-                        <div className='silver'><p>Серебро</p></div>
-                        <div className='gold'><p>Золото</p></div>
+                        {service._types?.map(type =>
+                            <div><ServiceTypeBar key={type.id} type={type}/></div>
+                        )}
                     </div>
                 </div>
-                <div className="serv-container-in">
-                    <p>Персональный тренер:</p>
-                    <div className="serv-in">
-                        <div className='standard'><p>1 занятие</p></div>
-                        <div className='silver'><p>6 занятий</p></div>
-                        <div className='gold'><p>Безлимит</p></div>
-                    </div>
-                </div>
-                <div className="serv-container-in">
-                    <p>Другие дополнительные услуги:</p>
-                    <div className="serv-in">
-                        <div className='standard'><p>Услуга 1</p></div>
-                        <div className='silver'><p>Услуга 2</p></div>
-                        <div className='gold'><p>Услуга 3</p></div>
-                    </div>
-                </div>
+                {isAdmin &&  <Button
+                    variant={"outline-light"}
+                    style={{marginTop: 40}}
+                    onClick={() => setServiceVisible(true)}
+                >
+                    Добавить новый тип услуги
+                </Button>}
+                <CreateServiceType show={serviceVisible} onHide={() => setServiceVisible(false)}/>
             </div>
         </div>
     );
 };
-
 export default ServicesComponent;

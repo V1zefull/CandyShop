@@ -10,15 +10,15 @@ const Signup = (() => {
     const [surname,setSurname] = useState("")
     return (
         <div className="Form">
-            <p className="RegLog">Register</p>
+            <p className="RegLog">Регистрация</p>
             <form className="InputForm">
-                <Input value={email} setValue={setEmail} type="text" placeholder=" Email"/>
-                <Input value={password} setValue={setPassword} type="password" placeholder=" Password"/>
-                <Input value={name} setValue={setName} type="text" placeholder=" Name"/>
-                <Input value={surname} setValue={setSurname} type="text" placeholder=" Surname"/>
+                <Input value={email} setValue={setEmail} type="text" placeholder=" Введите почту"/>
+                <Input value={password} setValue={setPassword} type="password" placeholder=" Введите пароль"/>
+                <Input value={name} setValue={setName} type="text" placeholder=" Введите ваше имя"/>
+                <Input value={surname} setValue={setSurname} type="text" placeholder=" Введите вашу фамилию"/>
             </form>
-            <p className="log">if you already have account <NavLink to="/Login">LOGIN</NavLink></p>
-            <button type="submit" onClick={()=> signup(email, password, name, surname)}>Register</button>
+            <p className="log">Если у вас уже есть аакаунт то <NavLink to="/Login">Войдите</NavLink></p>
+            <button type="submit" onClick={()=> signup(email, password, name, surname)}>Зарегистрироваться</button>
         </div>
     )
 })
